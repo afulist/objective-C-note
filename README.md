@@ -20,25 +20,13 @@
 * Ch04 - 介紹 Objective-C 的運算式以及一些運算子 `(done!)`
 * Ch05 - 介紹 Objective-C 迴圈  `(done!)`
 * Ch06 - 介紹 Objective-C 的流程控制 (未完成)
-* Ch07 - 介紹 Objective-C 類別(1) (未完成)
-	* 類別, 物件, 方法 	
-	* @interface 與 @implementation 區段介紹
-	* 存取實體變數
-	* 合成存取方法 (@property, @synthesize
-	
+* Ch07 - 介紹 Objective-C 類別(1) (未完成)	
 * Ch08 - 介紹 Objective-C 類別(2) (未完成)
 * Ch09 - 介紹 Objective-C 繼承 (未完成)
 * Ch10 - 介紹 Objective-C 同名異式 (未完成)
 * Ch11 - 介紹 Objective-C 動態型別與動態繫結  (未完成)
 * Ch12 - 介紹 Objective-C 前端程式 (未完成)
-
----
-
 * Ch13 - 介紹 Foundation Framework
-* ...
-
----
-
 * Ch** - 介紹 Cocoa
 
 ---
@@ -48,8 +36,8 @@
 * Ch** - Lab2 : 實作 IOS 程式 (實作主題未定)
 
 ## 附錄
-* Business Topic - 撰寫 APP 開發企劃書
-* Auto Layout Topic - (未定)
+* Topic - 撰寫 APP 開發企劃書
+<!--* Auto Layout Topic - (未定)-->
 
 
 ## 參考資源
