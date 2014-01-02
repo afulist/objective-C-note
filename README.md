@@ -37,8 +37,6 @@
 
 ## 附錄
 * Topic - 撰寫 APP 開發企劃書
-<!--* Auto Layout Topic - (未定)-->
-
 
 ## 參考資源
 * 在我學習 Objective-C 時，主要的學習依據以及手上所觀看的書籍為 [精通 Objective-C 程式設計 (第五版)
