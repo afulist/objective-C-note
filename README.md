@@ -28,15 +28,15 @@
 * Ch12 - 介紹 Objective-C 前端程式 (未完成)
 * Ch13 - 介紹 Foundation Framework
 * Ch** - 介紹 Cocoa
-
----
-
 * Ch** - 寫第一個 IOS 程式
+
+<!--
 * Ch** - Lab1 : 實作 IOS 程式 (實作主題未定)
 * Ch** - Lab2 : 實作 IOS 程式 (實作主題未定)
 
 ## 附錄
 * Topic - 撰寫 APP 開發企劃書
+-->
 
 ## 參考資源
 * 在我學習 Objective-C 時，主要的學習依據以及手上所觀看的書籍為 [精通 Objective-C 程式設計 (第五版)
