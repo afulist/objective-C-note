@@ -5,9 +5,9 @@
   <title>Ch04 - 介紹 Objective-C 的運算式以及一些運算子 </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Win Wu's Note">
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/css/hc.css" rel="stylesheet">
-  <link href="/css/override.css" rel="stylesheet">
+  <link href="/objective-C-note/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/objective-C-note/css/hc.css" rel="stylesheet">
+  <link href="/objective-C-note/css/override.css" rel="stylesheet">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -32,10 +32,10 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-          <li><a href="/list.html">List</a></li>
-          <!--li><a href="/links.html">Links</a></li-->
-          <!--li><a href="/projects.html">Projects</a></li-->
-          <li><a href="/about.html">About</a></li>
+          <li><a href="http://winwu.github.io/objective-C-note/list.html">List</a></li>
+          <!--li><a href="http://winwu.github.io/objective-C-note/links.html">Links</a></li-->
+          <!--li><a href="http://winwu.github.io/objective-C-note/projects.html">Projects</a></li-->
+          <li><a href="http://winwu.github.io/objective-C-note/about.html">About</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -46,15 +46,15 @@
        <!-- Sidebar -->
        <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-          <li class="sidebar-brand"><a href=""><h1 class="brand">Obj-C 學習</h1></a><h3>Win Wu's Note</h3></li>
+          <li class="sidebar-brand"><a href="http://winwu.github.io/objective-C-note"><h1 class="brand">Obj-C 學習</h1></a><h3>Win Wu's Note</h3></li>
           <li>不准偷懶啊！</li>
           <li>有點害怕會誤人子弟...</li>
           
 
           <hr />
-          <li><a href="/list.html">List</a></li>
+          <li><a href="http://winwu.github.io/objective-C-note/list.html">List</a></li>
           
-          <li><a href="/about.html">About</a></li>
+          <li><a href="http://winwu.github.io/objective-C-note/about.html">About</a></li>
           <hr />
           <div id="social-wrapper">
            <li> <a href="http://twitter.com/yiyingwu1990"><i class="fa fa-twitter-square"></i> @twitter</a></li>
@@ -170,16 +170,11 @@ NSLog(@&quot; 9 / 0 = %i&quot;, 9/0);
 </code></pre></div>
 <ul>
 <li><p>第一行運算式， 9/3 得 3 沒有問題，但是第二行運算式，卻有一點狀況，一般我們如果在計算機按下 9/0 會得到不正確的結果，這是正常的，因為在程式語言中，把除數指定為 0，都會是不正常的結果或是錯誤，因此我們在後面的章節會學到，當除數為 0 的時候，則顯示錯誤或是一些提示訊息，而不要顯示不正常的結果。</p></li>
-<li><p>在 Xcode 將除數設定為0時的警告:</p></li>
+<li><p>在 Xcode 將除數設定為0時的警告:
+<img src="img/ch04-001.png" alt="在 Xcode 將除數設定為0時的警告"></p></li>
+<li><p>使用 google 計算機將除數設定為0時的警告:
+<img src="img/ch04-002.png" alt="使用 google 計算機將除數設定為0時的警告"></p></li>
 </ul>
-
-<p><img src="/img/ch04-001.png" alt="在 Xcode 將除數設定為0時的警告"></p>
-
-<ul>
-<li>使用 google 計算機將除數設定為0時的警告:</li>
-</ul>
-
-<p><img src="/img/ch04-002.png" alt="使用 google 計算機將除數設定為0時的警告"></p>
 
 <hr>
 
@@ -288,7 +283,7 @@ NSLog(@&quot;-a = %i&quot;, -a);
   <li class="previous"><a href="/2014/01/04/ch03.html">&larr; Older</a></li>
   
    
-  <li class="next"><a href="/2014/01/07/ch06.html">Newer &rarr;</a></li>
+  <li class="next"><a href="/2014/01/06/ch05.html">Newer &rarr;</a></li>
   
 
 </ul>
@@ -312,12 +307,12 @@ NSLog(@&quot;-a = %i&quot;, -a);
     </ul>
     </div-->
   	<footer>
-       <p class="text-muted credit">&copy; 2014 Obj-C 學習 &middot; <a href="https://github.com/arnp/herring-cove"> Herring Cove for Jekyll </a>Sun Jan 19 13:43:04 +0800 2014  </p>
+       <p class="text-muted credit">&copy; 2014 Obj-C 學習 &middot; <a href="https://github.com/arnp/herring-cove"> Herring Cove for Jekyll </a>Sun Jan 19 14:24:37 +0800 2014  </p>
   		 </footer>
  <!-- Bootstrap core JavaScript-->
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="/objective-C-note/js/jquery-1.10.2.min.js"></script>
+    <script src="/objective-C-note/js/bootstrap.min.js"></script>
+    <script src="/objective-C-note/js/bootstrap.js"></script>
     <script type="text/javascript" src="js/hc.js"></script>
 </body>
 
