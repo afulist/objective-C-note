@@ -1,98 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+---
+layout: default
+---
+</div>
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
-    <title>Objective-C-note by winwu</title>
-  </head>
-
-  <body>
-
-    <header>
-      <div class="container">
-        <h1>Objective-C-note</h1>
-        <h2>學習 Objective-C 程式筆記</h2>
-
-        <section id="downloads">
-          <a href="https://github.com/winwu/objective-C-note/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/winwu/objective-C-note/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/winwu/objective-C-note" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
-        <h1>
-<a name="%E9%97%9C%E6%96%BC-objective-c-%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98" class="anchor" href="#%E9%97%9C%E6%96%BC-objective-c-%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98"><span class="octicon octicon-link"></span></a>關於 Objective-C 程式設計學習筆記</h1>
-
-<pre><code>有問題歡迎來信 yiyingwu.1990[ at ]gmail.com。
-請自行將 [at] 換成 ＠，謝謝 :)
-</code></pre>
-
-<ul>
-<li>是我個人在學習 Objective-C 時的心得記錄，希望以教學的口吻呈現，但難免會有筆誤或是觀念上的錯誤，我一向有點害怕做出誤人子弟的事情，所以希望觀看者能夠自行斟酌文章敘述的真實性，另外，若有發現錯誤或是錯字，或是有些地方可能敘述的不夠清楚，也歡迎開 Issue 給我。</li>
-</ul><h2>
-<a name="%E7%9B%AE%E9%8C%84" class="anchor" href="#%E7%9B%AE%E9%8C%84"><span class="octicon octicon-link"></span></a>目錄</h2>
-
-<pre><code>***注意!***，章節可能會再變動。
-</code></pre>
-
-<ul>
-<li>Ch01 - 簡單的歷史介紹跟 Objective-C 簡介 <code>(done!)</code>
-</li>
-<li>Ch02 - 藉由 Xcode 來介紹第一支 Objective-C  <code>(done!)</code>
-</li>
-<li>Ch03 - 介紹 Objective-C 的各種資料型別 <code>(done!)</code>
-</li>
-<li>Ch04 - 介紹 Objective-C 的運算式以及一些運算子 <code>(done!)</code>
-</li>
-<li>Ch05 - 介紹 Objective-C 迴圈  <code>(done!)</code>
-</li>
-<li>Ch06 - 介紹 Objective-C 的流程控制 (未完成)</li>
-<li>Ch07 - 介紹 Objective-C 類別(1) (未完成)<br>
-</li>
-<li>Ch08 - 介紹 Objective-C 類別(2) (未完成)</li>
-<li>Ch09 - 介紹 Objective-C 繼承 (未完成)</li>
-<li>Ch10 - 介紹 Objective-C 同名異式 (未完成)</li>
-<li>Ch11 - 介紹 Objective-C 動態型別與動態繫結  (未完成)</li>
-<li>Ch12 - 介紹 Objective-C 前端程式 (未完成)</li>
-<li>Ch13 - 介紹 Foundation Framework</li>
-<li>Ch** - 介紹 Cocoa</li>
-<li>Ch** - 寫第一個 IOS 程式</li>
-</ul><h2>
-<a name="%E5%8F%83%E8%80%83%E8%B3%87%E6%BA%90" class="anchor" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%BA%90"><span class="octicon octicon-link"></span></a>參考資源</h2>
-
-<ul>
-<li>在我學習 Objective-C 時，主要的學習依據以及手上所觀看的書籍為 <a href="http://www.books.com.tw/products/0010574124">精通 Objective-C 程式設計 (第五版)
-</a>。</li>
-</ul><h2>
-<a name="%E5%AD%B8%E7%BF%92%E8%B3%87%E6%BA%90%E5%88%97%E8%A1%A8" class="anchor" href="#%E5%AD%B8%E7%BF%92%E8%B3%87%E6%BA%90%E5%88%97%E8%A1%A8"><span class="octicon octicon-link"></span></a>學習資源列表</h2>
-
-<ul>
-<li><a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/ProgrammingWithObjectiveC.pdf">Programming with Objective-C(PDF)</a></li>
-<li><a href="http://www.mokoversity.com/course/ios/objective-c-overview">Objective-C 程式設計入門 By: Jollen Chen</a></li>
-<li><a href="http://www.stanford.edu/class/cs193p/cgi-bin/drupal/">CS 193P iPhone Application Development</a></li>
-<li><a href="http://www.raywenderlich.com/tutorials">iPhone Tutorials</a></li>
-</ul><hr><p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="創用 CC 授權條款" src="http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a><br>本著作由WinWu製作，以<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">創用CC 姓名標示-非商業性-相同方式分享 4.0 國際 授權條款</a>釋出。</p>
-      </section>
-    </div>
-
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-31613039-2");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
-  </body>
-</html>
+  <div class="recent-posts">
+  <h1>Recent Posts</h1>
+  {% for post in site.posts limit: 1 %}
+    <ul class="homepage-posts most-recent">
+    <li><span><h4><a href="{{ post.url }}">{{ post.title }}</a>&nbsp;<span class="badge"><smaller>FRESH</smaller></span><time class="pull-right">{{ post.date | date_to_string }}</h4></time></span></h4></span></li>
+    </ul>
+    {% endfor %}
+  	{% for post in site.posts limit: 4 offset:1 %}
+    <ul class="homepage-posts">
+ 	  <li><span><h4><a href="{{ post.url }}">{{ post.title }}</a><time class="pull-right">{{ post.date | date_to_string }}</h4></time></span></h4></span></li>
+    </ul>
+  	{% endfor %}
+    <ul>
+      <a href="{{ site.url }}/list.html">View More...</a>
+</ul>
+  	</div>
+<div class="contianer">

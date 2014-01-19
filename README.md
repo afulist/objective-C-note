@@ -21,7 +21,7 @@
 * Ch05 - 介紹 Objective-C 迴圈  `(done!)`
 * Ch06 - 介紹 Objective-C 的流程控制 `(done!)`
 * Ch07 - 介紹 Objective-C 類別(1) `(done!)`	
-* Ch08 - 介紹 Objective-C 類別(2) `(done!)`	
+* Ch08 - 介紹 Objective-C 類別(2) `(done!)`
 * Ch09 - 介紹 Objective-C 繼承 (未完成)
 * Ch10 - 介紹 Objective-C 同名異式 (未完成)
 * Ch11 - 介紹 Objective-C 動態型別與動態繫結  (未完成)
