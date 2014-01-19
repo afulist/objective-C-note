@@ -26,8 +26,7 @@
 * Ch10 - 介紹 Objective-C 同名異式 (未完成)
 * Ch11 - 介紹 Objective-C 動態型別與動態繫結  (未完成)
 * Ch12 - 介紹 Objective-C 前端程式 (未完成)
-* Ch13 - 介紹 Foundation Framework
-* Ch** - 介紹 Cocoa
+* Ch13 - 介紹 Foundation Framework 以及 Cocoa
 * Ch** - 寫第一個 IOS 程式
 
 <!--
