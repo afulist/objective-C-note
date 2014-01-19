@@ -94,7 +94,7 @@
 <p>類別 (class) 是由實體變數跟可存取變數的方法 (method) 所組成，可以透過定義該類別，建立該類別的實體(Instance) 或物件 (Object)。</p>
 
 <p>假如有個類別叫做 Human，我們可以說 win 是 Human 的實體 (Instance)，同理 Irene 以及 Eric 也是(此例人名僅是舉例)，每一個 Human 的實體 (Instance) 又稱為物件。
-<img src="/img/ch07-001.png" alt="001.png"></p>
+<img src="/objective-C-note/img/ch07-001.png" alt="001.png"></p>
 
 <h2 id="toc_3">(2) 實體 (Instance) 與方法 (Method)</h2>
 
@@ -125,7 +125,7 @@
 <h3 id="toc_4">如何呼叫方法</h3>
 
 <p>假設有個 Class 為 Mobile，Mobile 有幾個方法，比方說打電話 (call), 充電 (charge), 取得現在的電量 (getCharge) 都是。
-<img src="/img/ch07-002.png" alt="002"></p>
+<img src="/objective-C-note/img/ch07-002.png" alt="002"></p>
 
 <p>如何呼叫方法，你可以之前學過其他語言呼叫方法的方式會是這樣子: <code>obj-&gt;method(argument);</code>。但在 Objective-C 中，做法不太一樣，假如有一個類別或實體要呼叫一個方法 (或者說傳遞訊息給類別或實體)，其語法如下:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">[ClassOrInstance method];
@@ -209,7 +209,7 @@ mobile 是 class(類別名稱)， 而 new 是類別方法，表示取得一支�
 (如何建立可參考 Ch02 的做法，在此不再多做描述)。</p>
 
 <p>建立好新的 Project 之後，點擊 main.m 檔案(接下來我們會覆蓋預設產生的 code):
-<img src="/img/ch07-003.png" alt="ch07-003.png"></p>
+<img src="/objective-C-note/img/ch07-003.png" alt="ch07-003.png"></p>
 
 <hr>
 
@@ -229,7 +229,7 @@ mobile 是 class(類別名稱)， 而 new 是類別方法，表示取得一支�
     //方法(Method)的宣告
 @end
 </code></pre></div>
-<p><img src="/img/ch07-004.png" alt="interface"></p>
+<p><img src="/objective-C-note/img/ch07-004.png" alt="interface"></p>
 
 <blockquote>
 <p>當你鍵入 @inter 時，xcode 會幫你產生提示字元，只需要按 <code>tab</code> 鍵即可，會幫你補足順序第一位的提示文字(或是你有選擇其他的)，再接續按下一個 tab，則會跳到下一個提示字元(ex: @interface-&gt;(tab) class name --&gt;(tab) superclass)</p>
@@ -258,7 +258,7 @@ mobile 是 class(類別名稱)， 而 new 是類別方法，表示取得一支�
 
 <p>至於你可能會疑惑為什麼我們可以在這裡用到 NSObject，這是因為我們已經 import Foundation 的檔案了，Foundation.h 已經有幫我們載入 NSObject 的介面檔了(NSObject.h)，你可以檢視 Foundation 的資料夾，就可以看到 Foundation 包含哪些介面檔。</p>
 
-<p><img src="/img/ch07-006.png" alt="foundation"></p>
+<p><img src="/objective-C-note/img/ch07-006.png" alt="foundation"></p>
 
 <p>接著我們在 @interface 區塊定義了我們這個類別所需要的實體方法。</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">    -(void) setCharge :(int) n;
@@ -293,7 +293,7 @@ mobile 是 class(類別名稱)， 而 new 是類別方法，表示取得一支�
 </code></pre></div>
 <p>此圖比對定義實體方法有無參數的差別: </p>
 
-<p><img src="/img/ch07-007.png?1" alt="ch07-007"></p>
+<p><img src="/objective-C-note/img/ch07-007.png?1" alt="ch07-007"></p>
 
 <p>現在我們已經將 setCharge 這個實體方法定義為，沒有回傳值(-(void))，而且可以接受一組 int 型別的參數(:(int) n)，該參數名稱定義為 n (n是我們自己定義的，你也可以取其他的名字)，而且 n 這個參數可以被 setCharge 這個方法所使用。</p>
 
@@ -342,7 +342,7 @@ mobile 是 class(類別名稱)， 而 new 是類別方法，表示取得一支�
 
 <blockquote>
 <p>順帶一提，如果你的 implementation 實作檔如果少寫了 interface 所定義的方法，是會被警告的，你會得到 <code>Method definition for 實體方法名稱 not found</code> 的訊息。
-<img src="/img/ch07-008.png" alt=""></p>
+<img src="/objective-C-note/img/ch07-008.png" alt=""></p>
 </blockquote>
 
 <p>什麼是資料成員？其實就是實體變數，比方說充電量的值，會隨著 call 方法是否被呼叫而改變，這也算是一種資料成員，與該實體有關，能夠被存取,改變狀態的資料。</p>
@@ -461,7 +461,7 @@ mobile 是 class(類別名稱)， 而 new 是類別方法，表示取得一支�
 </blockquote>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">Mobile *win_mobile =[[Mobile alloc] init];
 </code></pre></div>
-<p><img src="/img/ch07-009.png" alt=""></p>
+<p><img src="/objective-C-note/img/ch07-009.png" alt=""></p>
 
 <p>其實上面這段程式也相當於這三段程式: (或許這樣看會比較好理解)</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">//將 win_mobile 變數的位置指定給 Mobile
@@ -498,14 +498,14 @@ win_mobile = [Mobile init];
 </code></pre></div>
 <p>我們 build 一下現在的程式，看看會有什麼結果，點按 xcode 左上角的 build 按鈕:</p>
 
-<p><img src="/img/ch07-010.png" alt=""></p>
+<p><img src="/objective-C-note/img/ch07-010.png" alt=""></p>
 
 <p>以下是執行結果的 Log:
 我們可以看到第一行 Now yoy charge value is 85，這句 NSLog 是經由 print 方法所實踐的，而因為我們在 print 方法之前有先呼叫 <code>[win_mobile setCharge:85];</code> ，因此我們已經改變了 chargeValue 的值。</p>
 
 <p>第二行 Log : Now your mobile is on standby，顯示現在手機的開關機狀態，因為我沒有呼叫 setShutdown 方法，因此還是待機狀態。</p>
 
-<p><img src="/img/ch07-011.png" alt=""></p>
+<p><img src="/objective-C-note/img/ch07-011.png" alt=""></p>
 
 <p>我們來呼叫一下 setShutdown 方法，如此一來 Log 的結果就會不一樣了 :</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">Mobile *win_mobile =[[Mobile alloc] init];
@@ -515,7 +515,7 @@ win_mobile = [Mobile init];
 </code></pre></div>
 <p>Log 結果:</p>
 
-<p><img src="/img/ch07-012.png" alt=""></p>
+<p><img src="/objective-C-note/img/ch07-012.png" alt=""></p>
 
 <hr>
 
@@ -585,15 +585,15 @@ int main(int argc, const char * argv[])
 
 <ul>
 <li><p>第一步，選擇 『File』-&gt;『New』-&gt;『File...』
-<img src="/img/ch07-013.png" alt=""></p></li>
+<img src="/objective-C-note/img/ch07-013.png" alt=""></p></li>
 <li><p>第二步，選擇 Objective-C class，然後點選『Next』。
-<img src="/img/ch07-014.png?" alt=""></p></li>
+<img src="/objective-C-note/img/ch07-014.png?" alt=""></p></li>
 <li><p>第三步，輸入你要建立的類別(class)名稱，輸入 Mobile，接著點按 『Next』。 
-<img src="/img/ch07-015.png?" alt=""></p></li>
+<img src="/objective-C-note/img/ch07-015.png?" alt=""></p></li>
 <li><p>第四步，選擇檔案儲存的路徑，通常我是按照預設的位置(project的資料夾底下)。 
-<img src="/img/ch07-016.png?" alt=""></p></li>
+<img src="/objective-C-note/img/ch07-016.png?" alt=""></p></li>
 <li><p>完成後，你會看到你的目錄已經出現 mobile.h 以及 mobile.m 檔。
-<img src="/img/ch07-017.png?" alt=""></p></li>
+<img src="/objective-C-note/img/ch07-017.png?" alt=""></p></li>
 </ul>
 
 <h4 id="toc_19">編輯 mobile.h</h4>
@@ -662,7 +662,7 @@ int main(int argc, const char * argv[])
 
 <p>既然剛剛把 mobile 的 interface 以及 implenemt 都搬到 mobile.h 以及 mobile.m 了，現在 main.m :</p>
 
-<p><img src="/img/ch07-018.png?1" alt=""></p>
+<p><img src="/objective-C-note/img/ch07-018.png?1" alt=""></p>
 
 <p>不過現在 main.m 出了一點問題，因為他不知道 win_mobile 要初始化的類別 Mobile 是誰，因為我們少了 import Mobile 這個類別（class），因此我們要在 #import <Foundation/Foundation.h> 下面多 #import ”mobile” 的 interface (介面檔)。</p>
 
@@ -763,7 +763,7 @@ int main(int argc, const char * argv[])
     </ul>
     </div-->
   	<footer>
-       <p class="text-muted credit">&copy; 2014 Obj-C 學習 &middot; <a href="https://github.com/arnp/herring-cove"> Herring Cove for Jekyll </a>Sun Jan 19 20:58:53 +0800 2014  </p>
+       <p class="text-muted credit">&copy; 2014 Obj-C 學習 &middot; <a href="https://github.com/arnp/herring-cove"> Herring Cove for Jekyll </a>Sun Jan 19 21:06:54 +0800 2014  </p>
   		 </footer>
  <!-- Bootstrap core JavaScript-->
     <script src="http://winwu.github.io/objective-C-note/js/jquery-1.10.2.min.js"></script>
