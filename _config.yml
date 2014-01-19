@@ -5,7 +5,7 @@ redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 pygments: true
 baseurl: http://winwu.github.io/objective-C-note
-url: 
+url: http://winwu.github.io/objective-C-note
 description: Win Wu's Note
 github: http://www.github.com/winwu
 twitter: http://twitter.com/yiyingwu1990
