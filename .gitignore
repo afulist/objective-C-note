@@ -1,2 +1,12 @@
-
-
+_site/
+_includes/
+_layouts/
+index.*
+list.html
+about.*
+css/*
+js/
+links.html
+projects.html
+LICENSE
+_config.yml
