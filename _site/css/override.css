@@ -1,0 +1,47 @@
+body{
+  font-family: sans-serif;
+}
+.letter p{
+  font-weight: normal;
+}
+.credit {
+  font-size: 13px;
+  color: #B6B0B0;
+}
+.sidebar-nav > .sidebar-brand > h3 {
+  font-weight: normal;
+}
+.container.container-greeting{
+  padding:0;
+  height: 120px;
+  margin: 0 10px;
+}
+table{
+  background: #fff;
+  border-radius: 4px;
+}
+table thead{
+  background: rgb(255, 242, 208)
+}
+table td,
+table th{
+  padding: 5px 11px;
+}
+table tr{
+  border-bottom: 1px solid #ddd;
+}
+#article .posts{
+  line-height: 26px;
+}
+.recent-posts{
+  margin: 10px;
+  padding: 10px 20px;
+}
+.container a{
+  font-size: 14px;
+  border:none;
+}
+time {
+  font-family: arial;
+  font-size: 14px;
+}

@@ -1,0 +1,179 @@
+  <!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <title>Ch01 - 簡單的歷史介紹跟 Objective-C 簡介</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Win Wu's Note">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/hc.css" rel="stylesheet">
+  <link href="/css/override.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Win Wu </div>
+      <div id = "wrapper">      
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p class="navbar-brand">Obj-C 學習</p>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          <li><a href="/list.html">List</a></li>
+          <!--li><a href="/links.html">Links</a></li-->
+          <!--li><a href="/projects.html">Projects</a></li-->
+          <li><a href="/about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+
+       <!-- Sidebar -->
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand"><a href=""><h1 class="brand">Obj-C 學習</h1></a><h3>Win Wu's Note</h3></li>
+          <li>不准偷懶啊！</li>
+          <li>有點害怕會誤人子弟...</li>
+          
+
+          <hr />
+          <li><a href="/list.html">List</a></li>
+          
+          <li><a href="/about.html">About</a></li>
+          <hr />
+          <div id="social-wrapper">
+           <li> <a href="http://twitter.com/yiyingwu1990"><i class="fa fa-twitter-square"></i> @twitter</a></li>
+           <li> <a href="http://www.linkedin.com/in/winwu"><i class="fa fa-linkedin-square"></i> linkedin</a> </li>
+           <li> <a href="http://www.facebook.com/YiYngWu"><i class="fa fa-facebook-square"></i> facebook</a></li>
+           <li> <a href="http://www.github.com/winwu"><i class="fa fa-github-square"></i> github</a> </li>
+         </div>
+       </ul>
+     </div>
+
+     <div class="container">
+    <div id="article">
+   <div class="article-title">Ch01 - 簡單的歷史介紹跟 Objective-C 簡介</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 25 Dec 2013</small></p> <hr/>
+   <div class="post">
+     <h1 id="toc_0">Objective-C 程式設計學習筆記 Ch01</h1>
+
+<ul>
+<li>Objective-C 程式設計學習筆記 Ch01-基本介紹</li>
+<li>Ch01 將介紹簡單的歷史跟 Objective-C</li>
+<li>你要跳坑了嗎？</li>
+</ul>
+
+<h2 id="toc_1">(1) 歷史與簡介</h2>
+
+<p>Objective-C 一種高階,物件導向的程式語言，他承襲了 C 語言以及 Smalltalk 的特性。早期是來自於 NeXTSTEP 的作業系統，主要的實作環境是 GCC 以及 LLVM (前端實作為 Clang)，目前比較新版的 Objective-C 都是以 Clang 實作。</p>
+
+<ul>
+<li>1980 年，Bred J. Cox 與 Tom Love 發明 Objective-C。</li>
+<li>1988 年，賈伯斯成立 Next Computer 公司，買下 Objective-C 的授權，並且發開 Appkit 以及 Foundation Kit...函式庫。</li>
+<li>1994 年，NeXT 電腦 與 Sun Microsystem 發行了 NEXTSTEP 系統的規格，稱作為 OPENSTEP。而自由軟體基金會的 GUN 增加對 Objective-C 的支援，在自由軟體基金會的 ONESTEP 稱為 GUNstep。</li>
+</ul>
+
+<h2 id="toc_2">(2) 關於 XCode v.s Objective-C v.s Cocoa</h2>
+
+<p>常常被人所搞混的部分就是 XCode 以及 Obejective-C，在這裡做這個簡單的介紹。</p>
+
+<ul>
+<li><code>Xcode 是一個開發環境</code>，也具有編譯的功能，他的地位可以想像成類似 Visual Studio。</li>
+<li><code>Objective-C 是一種程式語言</code>，就好比 JavaScript, Java 等等也是程式語言。</li>
+<li><code>Cocoa 其實就是一堆函式庫的集合</code>，你可以直接使用這些現成的函式庫。</li>
+</ul>
+
+<h2 id="toc_3">(3) C 語言與 Objective-C</h2>
+
+<ul>
+<li>為什麼叫 Objective-C ，因為承襲 C 語言的特性再加上物件導向的特性。</li>
+<li>Objective-C 承襲了 C 語言的特性 (Objective-C 是 C 語言的嚴格母集合)，也就是說任何可以編譯過的 C 語言都可以直接用在 Objectve-C。</li>
+<li>可以在 Objective-C 使用 C 語言。</li>
+<li>Objective-C 是 ANSI-C 的超集，可以混編 C 以及 C++ 語言。</li>
+<li>而 Objective-C 的物件導向的語法承襲了 Smalltalk 訊息傳遞 (Message Passing) 風格，在一般的程式語言，都是物件呼叫方法 (ex: <code>obj-&gt;method(arg)</code>)，而 Objective-C 裡，應該說是傳遞訊息給收訊息的對象 (<code>[obj method: arg]</code>)，並且在 Objective-C 物件呼叫方法的語法與其他 C 不太一樣，將會在往後的章節提到。</li>
+<li>Objective-C 除了物件宣告的方式與 C 語言不太一樣之外，其他像是型別的宣告 (int, float...)，預處理器（preprocessing），流程控制，函式宣告與呼叫都與 C 類似。</li>
+</ul>
+
+<hr>
+
+<h4 id="toc_4">下一章節，將會介紹開發 Objective-C 會用到的開發工具 Xcode。</h4>
+
+<ul>
+<li>有個很現實的問題是，你必須具備 Mac。</li>
+<li>請先裝好 XCode (抱歉，下篇並不介紹安裝步驟)，<a href="https://developer.apple.com/xcode/">Xcode 連結網址</a>。</li>
+<li>我們會直接用 Xcode 講一個簡單的程式，並且告訴您從哪裡點按編譯的功能。</li>
+</ul>
+
+<h2 id="toc_5">參考資料</h2>
+
+<ul>
+<li><a href="http://zh.wikipedia.org/wiki/Objective-C">維基百科</a></li>
+<li><a href="http://www.books.com.tw/products/0010574124">精通 Objective-C 程式設計 (第五版)</a></li>
+<li><a href="https://developer.apple.com/library/mac/documentation/cocoa/conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html#//apple_ref/doc/uid/TP40011210-CH1-SW1">Programming with Objective-C</a></li>
+</ul>
+
+<hr>
+
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="創用 CC 授權條款" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本著作由<span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">WinWu</span>製作，以<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">創用CC 姓名標示-非商業性-相同方式分享 4.0 國際 授權條款</a>釋出。</p>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+  
+  <li class="previous"><a href="/2013/01/06/ch05.html">&larr; Older</a></li>
+  
+   
+  <li class="next"><a href="/2014/01/01/ch02.html">Newer &rarr;</a></li>
+  
+
+</ul>
+
+  <!--div id="disqus_thread">
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = ''; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </ul>
+    </div-->
+  	<footer>
+       <p class="text-muted credit">&copy; 2014 Obj-C 學習 &middot; <a href="https://github.com/arnp/herring-cove"> Herring Cove for Jekyll </a>Sun Jan 19 13:43:04 +0800 2014  </p>
+  		 </footer>
+ <!-- Bootstrap core JavaScript-->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/hc.js"></script>
+</body>
+
+</html>

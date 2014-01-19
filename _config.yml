@@ -1,0 +1,19 @@
+name: Obj-C 學習
+author: Win Wu
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+pygments: true
+baseurl: /
+url: 
+description: Win Wu's Note
+github: http://www.github.com/winwu
+twitter: http://twitter.com/yiyingwu1990
+facebook: http://www.facebook.com/YiYngWu
+linkedin: http://www.linkedin.com/in/winwu
+email: yiyingwu.1990[ AT ]gmail.com
+location: Taipei
+#disqus: diqus-username
+
+##Make sure to edit the above fields, especially for disqus. 
+

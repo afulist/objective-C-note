@@ -1,0 +1,388 @@
+  <!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <title>Ch07 - 介紹 Objective-C 類別(1)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Win Wu's Note">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/hc.css" rel="stylesheet">
+  <link href="/css/override.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Win Wu </div>
+      <div id = "wrapper">      
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p class="navbar-brand">Obj-C 學習</p>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          <li><a href="/list.html">List</a></li>
+          <!--li><a href="/links.html">Links</a></li-->
+          <!--li><a href="/projects.html">Projects</a></li-->
+          <li><a href="/about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+
+       <!-- Sidebar -->
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand"><a href=""><h1 class="brand">Obj-C 學習</h1></a><h3>Win Wu's Note</h3></li>
+          <li>不准偷懶啊！</li>
+          <li>有點害怕會誤人子弟...</li>
+          
+
+          <hr />
+          <li><a href="/list.html">List</a></li>
+          
+          <li><a href="/about.html">About</a></li>
+          <hr />
+          <div id="social-wrapper">
+           <li> <a href="http://twitter.com/yiyingwu1990"><i class="fa fa-twitter-square"></i> @twitter</a></li>
+           <li> <a href="http://www.linkedin.com/in/winwu"><i class="fa fa-linkedin-square"></i> linkedin</a> </li>
+           <li> <a href="http://www.facebook.com/YiYngWu"><i class="fa fa-facebook-square"></i> facebook</a></li>
+           <li> <a href="http://www.github.com/winwu"><i class="fa fa-github-square"></i> github</a> </li>
+         </div>
+       </ul>
+     </div>
+
+     <div class="container">
+    <div id="article">
+   <div class="article-title">Ch07 - 介紹 Objective-C 類別(1)</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 10 Jan 2014</small></p> <hr/>
+   <div class="post">
+     <h1 id="toc_0">Objective-C 程式設計學習筆記 Ch07</h1>
+
+<ul>
+<li>Ch07-介紹 Objective-C 的類別。</li>
+</ul>
+
+<p>其實這章不只講類別，還會提到物件導向的觀念，實體以及方法，以及會回到 ch01 所提及的 Objective-C 承襲 Smalltalk 的訊息傳遞模型 (message passing)，如何使用方法應用於類別與物件。下一章節是類別(2)。</p>
+
+<p>物件其實是有點抽象複雜的概念，我的程度大概就只能表達到這樣的水平了，我一直不曉得到底該怎麼表達會比較好，希望大家多給些意見。</p>
+
+<h2 id="toc_1">目錄:</h2>
+
+<ul>
+<li>(1) 什麼是類別</li>
+<li>(2) 實體 (Instance) 與方法 (Method)</li>
+<li>(3) 存取實體變數與資料封裝</li>
+</ul>
+
+<h2 id="toc_2">(1) 什麼是類別</h2>
+
+<p>類別 (class) 是由實體變數跟可存取變數的方法 (method) 所組成，可以透過定義該類別，建立該類別的實體(Instance) 或物件 (Object)。</p>
+
+<p>假如有個類別叫做 Human，我們可以說 win 是 Human 的實體 (Instance)，同理 Irene 以及 Eric 也是(此例人名僅是舉例)，每一個 Human 的實體 (Instance) 又稱為物件。</p>
+
+<p><img src="/img/ch07-001.png" alt=""></p>
+
+<h2 id="toc_3">(2) 實體 (Instance) 與方法 (Method)</h2>
+
+<p>類別或實體可以進行的行為，稱為方法 (Method)，方法有實體方法 (instance method) 也有類別 (class method) 方法。</p>
+
+<table><thead>
+<tr>
+<th align="left">方法名稱</th>
+<th align="left">說明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">類別方法</td>
+<td align="left">由類別所呼叫的方法，其方法的宣告前面都會加上 + 號。</td>
+</tr>
+<tr>
+<td align="left">實體方法</td>
+<td align="left">由類別的實體所觸發的方法。</td>
+</tr>
+</tbody></table>
+
+<p>比方說所有的 Human 的實體，都會走路 (walk), 喝水 (drink), 吃東西 (eat)，這些方法都稱為實體方法。</p>
+
+<p>每個人被生下來的過程其實就是產生一個 Human 類別的實體，而該實體的性別會是女生 (becomeGirl) 還是男生 (becomeBoy)，這是類別方法。</p>
+
+<hr>
+
+<h3 id="toc_4">如何呼叫方法</h3>
+
+<p>假設有個 Class 為 Mobile，Mobile 有幾個方法，比方說打電話 (call), 充電 (charge), 取得現在的電量 (getCharge) 都是。</p>
+
+<p><img src="/img/ch07-002.png" alt=""></p>
+
+<p>如何呼叫方法，你可以之前學過其他語言呼叫方法的方式會是這樣子: <code>obj-&gt;method(argument);</code>。但在 Objective-C 中，做法不太一樣，假如有一個類別或實體要呼叫一個方法 (或者說傳遞訊息給類別或實體)，其語法如下:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">[ClassOrInstance method];
+</code></pre></div>
+<p>左邊是類別或是實體的名稱(ClassOrInstance)，右邊為方法(method)的名稱。
+另外，因為有些方法是可以傳遞參數的，因此語法也可以是這樣:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">[ClassOrInstance method: argument];
+</code></pre></div>
+<p>要使用這些方法之前，必須要有一個物件作為對象，比方說我們先取得一隻手機 :
+mobile 是 class(類別名稱)， 而 new 是類別方法，表示取得一支新的手機。</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">myMobile = [mobile new];
+</code></pre></div>
+<p>接下來我要讓 myMobile 做充電的動作，因此需要呼叫 charge 這個實體方法:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">[myMobile charge]
+</code></pre></div>
+<p>由於 Objective-C 承襲 Smalltalk 的訊息傳遞模型 (message passing)，比較好一點的說法應該要說，發出一個 charge 的訊息給 myMobile 物件，charge 就是訊息 (message)，而 myMobile 就是訊息的接收者。myMobile 收到 charge 這個訊息之後，就看 charge 的這方法的內部如何定義實作。</p>
+
+<p>接著，假如 charge 這個方法可以接受參數，該參數代表充電到幾 % 就結束充電，假設充電到 70% 就停止充電，其語法表示為:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">[myMobile charge : 70];
+</code></pre></div>
+<p>假設我的朋友 Eric 也有一隻 Mobile，我們可以說 ericMobile 也是 Mobile 的實體 (instance)。</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">ericMobile = [Mobile new];
+</code></pre></div>
+<p>因此同樣都是 Mobile 的實體， Eric 的手機也具有相同的方法，像是打電話,充電等等。</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">[ericMobile charge];
+</code></pre></div>
+<h1 id="toc_5"></h1>
+
+<h3 id="toc_6">想想 Mobile 這個類別還有哪些方法?以及舉例使用方式</h3>
+
+<table><thead>
+<tr>
+<th align="left">方法名稱</th>
+<th align="left">說明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">[myMobile call : eric]</td>
+<td align="left">myMobile 這的實體打電話給 Eric</td>
+</tr>
+<tr>
+<td align="left">[myMobile charge : 100]</td>
+<td align="left">myMobile 充電到 100%</td>
+</tr>
+<tr>
+<td align="left">[myMobile shutdown]</td>
+<td align="left">myMobile 關機</td>
+</tr>
+<tr>
+<td align="left">...</td>
+<td align="left">...</td>
+</tr>
+</tbody></table>
+
+<hr>
+
+<h3 id="toc_7">實體/物件的狀態(state)</h3>
+
+<p>實體所呼叫的方法，可以改變物件的狀態，比方說目前手機的剩餘的電量就是一種狀態，如果使用 charge 方法，並且還有設定參數，比方說參數設為 100 ，<code>[myMobile charge : 100]</code>，就表示要將手機充電到 100%，當方法執行完成時，剩餘的電量狀態，也會被更變為 100。</p>
+
+<p>另外手機目前是開機的，這也是一種狀態，當你傳遞(呼叫)關機的訊息(方法)時 <code>[myMobile shutdown]</code>，手機的狀態就會變成關機。</p>
+
+<h2 id="toc_8">(2) 類別(class)的定義與實作</h2>
+
+<ul>
+<li>Objective-C 的類別必須定義介面（interface）與實作（implementation）兩個部分。</li>
+<li>類別定義檔案的副檔名沿襲 C 語言的設計，介面檔 (interdace) 以 .h 為副檔名，實作檔案（implementation）以 .m 為副檔名。(在剛開始介紹時還不會介紹如何拆開介面檔與實作檔，會暫時先寫在同一支程式做介紹)。</li>
+<li>以下範例，我們會來如何定義一個 Mobile 的類別 (Class)，分為以下幾個方面介紹:
+
+<ul>
+<li>interface 區塊</li>
+<li>implementation 區塊</li>
+<li>使用/建立 Mobile 的實體(物件)</li>
+<li>利用 Xcode 建立 Mobile 的 Class<br></li>
+</ul></li>
+</ul>
+
+<hr>
+
+<p>在開始之前，請先使用 Xcode 建立一個新的 Project，我的 Project Name 取名為 ch07。
+(如何建立可參考 Ch02 的做法，在此不再多做描述)。</p>
+
+<p>建立好新的 Project 之後，點擊 main.m 檔案(接下來我們會覆蓋預設產生的 code):</p>
+
+<p><img src="/img/ch07-003.png" alt=""></p>
+
+<hr>
+
+<h3 id="toc_9">interface 區塊</h3>
+
+<p>編輯 main.m，首先 interface 介面檔的定義，格式如下:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">// @interface  介面檔定義
+@interface 類別名稱ClassName : superclass
+    //屬性(Property)與方法(Method)的宣告
+@end
+</code></pre></div>
+<p><img src="/img/ch07-004.png" alt=""></p>
+
+<blockquote>
+<p>當你鍵入 @inter 時，xcode 會幫你產生提示字元，只需要按 <code>tab</code> 鍵即可，會幫你補足順序第一位的提示文字(或是你有選擇其他的)，再接續按下一個 tab，則會跳到下一個提示字元(ex: @interface-&gt;(tab) class name --&gt;(tab) superclass)</p>
+</blockquote>
+
+<p>以下是目前的程式碼:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">//
+//  main.m
+//  ch07
+//
+//  Created by win on 2014/1/9.
+//  Copyright (c) 2014年 win. All rights reserved.
+//
+
+#import &lt;Foundation/Foundation.h&gt;
+
+// @interface  介面檔定義
+@interface Mobile : NSObject
+    -(void) call;
+    -(void) charge;
+    -(void) shutdown;
+@end
+</code></pre></div>
+<p>我們定義了一個名為 Mobile 的類別 (Class)，<code>@interface Mobile: NSObject</code>，其 : 後面所接的 superclass，代表 Mobile 類別繼承哪一個 Class (繼承的詳細內容會在下章提到)。目前 Mobile 繼承 NSObject，我們可以說 Mobile 的父類別是 NSObject，而 NSObject 有一個子類別是 Mobile，繼承的部分在此先知道這樣就可以了。</p>
+
+<p>至於你可能會疑惑為什麼我們可以在這裡用到 NSObject，這是因為我們已經 import Foundation 的檔案了，Foundation.h 已經有幫我們載入 NSObject 的介面檔了(NSObject.h)，你可以檢視 Foundation 的資料夾，就可以看到 Foundation 包含哪些介面檔。</p>
+
+<p><img src="/img/ch07-006.png" alt=""></p>
+
+<p>接著我們在 @interface 區塊定義了我們這個類別所需要的實體方法。</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">    -(void) call;
+    -(void) charge;
+    -(void) shutdown;
+</code></pre></div>
+<p>通常在方法的宣告前面，如果是『-』減號，代表該方法為<code>實體方法(instance method)</code>。而『＋』加號開頭的，代表該方法為<code>類別方法(class Method)</code>。因為我們的方法都是針對實體的行為，像是打電話, 充電, 關機，透過實體方法改變實體的一些屬性等等，因此將這些方法定義為實體方法。類別方法是針對類別本身的行為，像是建立一個新的類別，暫時我們的範例還遇不到需要定義類別方法。</p>
+
+<p>(void) 代表剛方法執行後的回傳值的形態，形態有很多種，void 只是其一，而 void 所指的就是『沒有回傳值』。</p>
+
+<p>在 Objective-C 中，回傳一個值會用 <code>return 回傳值;</code>，如果沒有回傳值，你可以只寫 <code>return;</code> 即可。</p>
+
+<p>假如今天我們宣告一個實體方法是需要回傳 int 型別的值，那麼你的宣告可能會是這樣:
+<code>-(int) chargeValue;</code> ，也就是 chargeValue 這個方法必須回傳一個 int 的數字。</p>
+
+<p>接下來，我們要為我們所宣告的實體方法做一些改變，目前的實體方法，可以有一些改變，比方說打電話 (call)，打電話必須要給訂一組電話號碼，才知道要打給誰，因此我們可以為我們所定義的方法，增加參數，而電話號碼，就是該方法的參數。</p>
+
+<h4 id="toc_10">帶有參數的方法可以這樣定義:</h4>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">-(void) call: (int) n;
+</code></pre></div>
+<p>此圖比對定義實體方法有無參數的差別: </p>
+
+<p><img src="/img/ch07-007.png" alt=""></p>
+
+<p>現在我們已經將 call 這個實體方法定義為，沒有回傳值(-(void))，而且可以接受一組 int 型別的參數(:(int) n)，該參數名稱定義為 n (n是我們自己定義的，你也可以取其他的名字)，而且 n 這個參數可以被 call 這個方法所使用。</p>
+
+<h4 id="toc_11">你可能會問，只能有一個參數嗎？</h4>
+
+<p>其實不然，參數可以不只有一個，假設今天有個日期的類別，其中有個方法要你設定一段日期的期間，那個就需要兩個參數，一個是起始日期，另一個是結束日期，你的實體方法可能會是這樣:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">-(void) dateFrom: (int) n dateTo: (int) m;
+</code></pre></div>
+<p>口語上你可以說這是一個 dateFrom:dateTo: 方法。</p>
+
+<p>interface 的介紹就先到這個部分，以下是目前 main.m 的完整版本，寫完介面檔之後，接下來就是要來定義這些方法如何實作，也就是進到下一個階段，implementation 實作檔階段。</p>
+
+<p>main.m 檔:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">//
+//  main.m
+//  ch07
+//
+//  Created by win on 2014/1/9.
+//  Copyright (c) 2014年 win. All rights reserved.
+//
+
+#import &lt;Foundation/Foundation.h&gt;
+
+// @interface  介面檔定義
+@interface Mobile : NSObject
+    -(void) call:(int) n;
+    -(void) charge;
+    -(void) shutdown;
+@end
+</code></pre></div>
+<h3 id="toc_12">implementation 區塊</h3>
+
+<p>撰寫 implementation 實作檔，必須要實作或定義你在介面檔所宣告的方法，在實作檔中，也會定義這個類別有哪些變數或是資料成員，這些變數就是實體變數(instance variable)。講直接一點就是，在 interface 介面檔你會定義你需要哪些方法，至於這些方法怎麼做事情，是寫在實作檔。</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">// @implementation 實作檔定義
+@implementation className
+{
+    //資料成員定義 (Member Declarations)
+}
+
+//實作定義在 interface 區塊的方法 (methods)
+
+@end
+</code></pre></div>
+<p>實作檔的定義一樣要給類別名稱(className)，這裡的類別名稱要跟 interface 介面檔的一樣。</p>
+
+<p>什麼是資料成員？其實就是實體變數，比方說充電量的值，會隨著 call 方法是否被呼叫而改變，這也算是一種資料成員，與該實體有關，能夠被存取,改變狀態的資料。</p>
+
+<p>定義資料成員會被 { } 大括號所包覆，在這個 { } 裡所定義的變數就是實體變數，當你建立一個新的實體時，該實體的實體變數也會被建立。假設我們有個實體變數稱為 chargeValue，表示現在的充電量，如果有個新的實體稱為 win1mobile，有另一個實體稱為 win2modile，那麼 win1mobile 與 win2mobile 都會有各自的 chargeValue。</p>
+
+<h3 id="toc_13">使用/建立 Mobile 的實體(物件)</h3>
+
+<h3 id="toc_14">利用 Xcode 建立 Mobile 的 Class</h3>
+
+<h2 id="toc_15">(3) 存取實體變數與資料封裝</h2>
+
+<hr>
+
+<h4 id="toc_16">下一章節，將會介紹 Objective-C 類別(2) 。</h4>
+
+<p>類別(2) 會介紹如何傳遞參數到方法, static 與 self 關鍵字, 合成存取方法等等。</p>
+
+<hr>
+
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="創用 CC 授權條款" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本著作由<span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">WinWu</span>製作，以<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">創用CC 姓名標示-非商業性-相同方式分享 4.0 國際 授權條款</a>釋出。</p>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+  
+  <li class="previous"><a href="/2014/01/07/ch06.html">&larr; Older</a></li>
+  
+   
+  <li class="next"><a href="/2014/01/17/ch08.html">Newer &rarr;</a></li>
+  
+
+</ul>
+
+  <!--div id="disqus_thread">
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = ''; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </ul>
+    </div-->
+  	<footer>
+       <p class="text-muted credit">&copy; 2014 Obj-C 學習 &middot; <a href="https://github.com/arnp/herring-cove"> Herring Cove for Jekyll </a>Sun Jan 19 13:43:04 +0800 2014  </p>
+  		 </footer>
+ <!-- Bootstrap core JavaScript-->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/hc.js"></script>
+</body>
+
+</html>

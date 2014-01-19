@@ -1,0 +1,423 @@
+  <!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <title>Ch05 - 介紹 Objective-C 迴圈</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Win Wu's Note">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/hc.css" rel="stylesheet">
+  <link href="/css/override.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Win Wu </div>
+      <div id = "wrapper">      
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p class="navbar-brand">Obj-C 學習</p>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          <li><a href="/list.html">List</a></li>
+          <!--li><a href="/links.html">Links</a></li-->
+          <!--li><a href="/projects.html">Projects</a></li-->
+          <li><a href="/about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+
+       <!-- Sidebar -->
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand"><a href=""><h1 class="brand">Obj-C 學習</h1></a><h3>Win Wu's Note</h3></li>
+          <li>不准偷懶啊！</li>
+          <li>有點害怕會誤人子弟...</li>
+          
+
+          <hr />
+          <li><a href="/list.html">List</a></li>
+          
+          <li><a href="/about.html">About</a></li>
+          <hr />
+          <div id="social-wrapper">
+           <li> <a href="http://twitter.com/yiyingwu1990"><i class="fa fa-twitter-square"></i> @twitter</a></li>
+           <li> <a href="http://www.linkedin.com/in/winwu"><i class="fa fa-linkedin-square"></i> linkedin</a> </li>
+           <li> <a href="http://www.facebook.com/YiYngWu"><i class="fa fa-facebook-square"></i> facebook</a></li>
+           <li> <a href="http://www.github.com/winwu"><i class="fa fa-github-square"></i> github</a> </li>
+         </div>
+       </ul>
+     </div>
+
+     <div class="container">
+    <div id="article">
+   <div class="article-title">Ch05 - 介紹 Objective-C 迴圈</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 06 Jan 2013</small></p> <hr/>
+   <div class="post">
+     <h1 id="toc_0">Objective-C 程式設計學習筆記 Ch05</h1>
+
+<ul>
+<li>Ch05-介紹 Objective-C 迴圈。</li>
+<li>本章會介紹 for, while 以及 do 這三種迴圈的程式敘述。</li>
+<li>介紹關係運算子 ( 如 &gt;=, ==...), 介紹遞增,遞減運算子。</li>
+</ul>
+
+<p>迴圈可以幫助我們以一些確定的規則，進行重複的程式碼，以利達到我們所預期的效果。這是一個蠻常用到的技巧。只要你能描述規則，迴圈可以幫你省下很多程式碼。以下會儘量用淺顯易懂的舉例，讓你體會迴圈的方便之處。</p>
+
+<h2 id="toc_1">目錄:</h2>
+
+<ul>
+<li>(1) for 敘述</li>
+<li>(2) while 敘述</li>
+<li>(3) do...while 敘述</li>
+<li>(4) break</li>
+<li>(5) continue</li>
+</ul>
+
+<h2 id="toc_2">(1) for 敘述</h2>
+
+<p>假如我們想要計算 1 + 2 + 3 + 4 + 5  的總和，你會怎麼做呢？
+比較方便的方法是直接使用 NSLog 並把算式寫在參數中 :</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">NSLog(@&quot;1 + 2 + 3 + 4 + 5 = %i&quot;, 1+2+3+4+5); 
+</code></pre></div>
+<p>如願，我們真的會得到正確的結果，也就是 15。</p>
+
+<p>但是，假如今天是 1 加到 100 呢？ 雖然我們真的有辦法手動用鍵盤輸入 1~100 的相加，但是這並不是長久之計，假如今天變成了要計算讓使用者輸入起始值到 100 的總和，我們就無法預測使用者想要從多少開始，這時候我們來看看如何使用 for 敘述，做到從 1 加到 100，並且把最後的總和印出。</p>
+
+<p>我們先來看一下 for 敘述的規則：</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">for(運算初始式; 條件式; 更新運算式){
+  程式碼敘述
+}
+</code></pre></div>
+<p>假如你的程式碼敘述只有一行，你可以省略大括號:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">for(運算初始式; 條件式; 更新運算式)
+  程式碼敘述
+</code></pre></div>
+<p>接著我們來看看如何做到 1~100 的總和:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">int total;
+for(int a = 1 ; a&lt;=100 ; a=a+1){
+   total = total + a;
+}
+NSLog(@&quot;1+2+3+..100 = %i&quot;, total);
+</code></pre></div>
+<p>實作結果:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">2013-12-29 ~[19854:303] 1+2+3+..100 = 5050
+</code></pre></div>
+<p>我們來看看這段 for 迴圈如何做到 1~100 累加的結果，首先我們宣告一了 total 變數，型別是 int，接著開始一段 for 迴圈的敘述，我們在運算初始式宣告一個變數 a ，a 的初始值是 1，接著我們在 for 迴圈的條件式設定這個迴圈的條件式 a&lt;=100，也就是說，<code>當 a&lt;= 100 這個條件成立的時候，才會執行 for 迴圈裡面的程式碼</code>，接著是更新運算式，每一次迴圈執行時都把 a 的值加 1，注意！更新運算式是當每次 for 迴圈執行完才會執行。</p>
+
+<p>而 total 的值會在迴圈每執行一次的時候更新，因此只要迴圈執行條件 (當 a&lt;=100 ) 成立，都會更新 total 的值 <code>total = total + a;</code>，你可以透過在 for 迴圈的程式敘述 NSLog 出 a  的值，觀察 a 值的變化:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">NSLog(@&quot;1 + 2 + 3 + 4 + 5 = %i&quot;, 1+2+3+4+5);
+int total;
+for(int a = 1 ; a&lt;=100 ; a=a+1){
+   total = total + a;
+   NSLog(@&quot;a =  %i&quot;, a);        
+}
+NSLog(@&quot;1+2+3+..100 = %i&quot;, total);
+</code></pre></div>
+<hr>
+
+<h3 id="toc_3">區域變數的概念</h3>
+
+<p>在上面的例子，我們在 for 迴圈的初始運算式才宣告 <code>for(int a=1;...)</code> 由於我們是在 for 迴圈的敘述裡面才宣告這個變數，因此只有 for 迴圈裡面才存取的到 a 這個變數的值，因此 a 變數是一個區域變數，只有在宣告變數 a 的區域才有辦法存取。</p>
+
+<p>你也可以把變數 a 的宣告放到外面使之變成全域變數 (任何地方都可以存取)，也不會影響程式執行:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">int a, total;
+for( a = 1 ; a&lt;=100 ; a=a+1){
+   total = total + a;
+}
+NSLog(@&quot;1+2+3+..100 = %i&quot;, total);
+</code></pre></div>
+<p>不過由於變數 a 在這個例子中除了 for 迴圈之外沒有其他地方需要用到，因此建議將變數 a 的宣告放在 for 迴圈的初始運算式，讓它成為區域變數使用即可。</p>
+
+<hr>
+
+<h3 id="toc_4">比較運算子</h3>
+
+<p>我們在條件式設定 a&lt;=100，<code>&lt;=</code> 是一種條件運算子(也有書本寫關係運算子)，比較運算子用來比較兩個運算的結果是否為 TRUE 或 FALSE，其運算的結果會是布林值，常見的比較算子如下:</p>
+
+<table><thead>
+<tr>
+<th align="left">運算子</th>
+<th align="left">名稱</th>
+<th>範例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">==</td>
+<td align="left">等於</td>
+<td>a == b</td>
+</tr>
+<tr>
+<td align="left">!=</td>
+<td align="left">不等於</td>
+<td>3!= 4</td>
+</tr>
+<tr>
+<td align="left">&lt;</td>
+<td align="left">小於</td>
+<td>4 &lt; 5</td>
+</tr>
+<tr>
+<td align="left">&lt;-</td>
+<td align="left">小於等於</td>
+<td>4 &lt;= 5</td>
+</tr>
+<tr>
+<td align="left">&gt;</td>
+<td align="left">大於</td>
+<td>a &gt; b</td>
+</tr>
+<tr>
+<td align="left">&gt;=</td>
+<td align="left">大於等於</td>
+<td>a &gt;= b</td>
+</tr>
+</tbody></table>
+
+<p>比較運算子常常出現在需要條件判斷的地方，我們在下一章節的流程 (條件) 控制會經常使用到。</p>
+
+<hr>
+
+<h3 id="toc_5">遞增,遞減運算子</h3>
+
+<p>我們在 for 迴圈的更新運算式寫道 <code>a=a+1</code>，意思是每次迴圈執行完後，a 的值遞增 1，而這種每次加 1 或是每次減 1 ，有一種運算子可以表達，那就是遞增,遞減運算子。</p>
+
+<p>a = a+1 也可以表示成 <code>a++</code>。</p>
+
+<p>a = a-1 也可以表示成 <code>a--</code>。</p>
+
+<p>這只是一種表達方式，可能一開始會不太習慣，但是使用久了會發現它很方便。</p>
+
+<p>來個遞減運算子的範例:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">int a;
+for( a = 100 ; a&gt;=1 ; a--){
+   NSLog(@&quot;a is %i&quot;, a);
+}
+</code></pre></div>
+<p>執行這個範例，我們把 a  的初始值設定為 100 ， 只要 a 滿足 <code>a&gt;=1</code> 這個條件時，將會執行裡面的程式碼，接著 a-- ，將 a 的值地減 1 ，一直不斷的重複直到 a 不滿足 a&gt;=1 這個條件時。</p>
+
+<p>你看看 NSLog 的 a 值是否從 100 遞減至 1 。</p>
+
+<p>舉例一些常見的運算式:
+(以下表格代表左邊的運算是相當於右邊的運算式)</p>
+
+<table><thead>
+<tr>
+<th align="left">運算式</th>
+<th align="left">基本運算式</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">a++</td>
+<td align="left">a = a + 1</td>
+</tr>
+<tr>
+<td align="left">a--</td>
+<td align="left">a = a - 1</td>
+</tr>
+<tr>
+<td align="left">a += b</td>
+<td align="left">a = a + b</td>
+</tr>
+<tr>
+<td align="left">a -= b</td>
+<td align="left">a = a - b</td>
+</tr>
+<tr>
+<td align="left">a*=</td>
+<td align="left">a = a * b</td>
+</tr>
+<tr>
+<td align="left">a/=</td>
+<td align="left">a = a / b</td>
+</tr>
+<tr>
+<td align="left">a%=</td>
+<td align="left">a = a % b</td>
+</tr>
+</tbody></table>
+
+<hr>
+
+<h3 id="toc_6">一個以上的運算初始值</h3>
+
+<p>for 迴圈的運算初始值，可以讓你定義一個以上的運算初始值，但多的運算是必須使用 <code>,</code>隔開。</p>
+
+<p>以下的範例是，同時有兩個初始值，分別是 a 跟 b (用,隔開)，當 a &lt;= 100 時， 更新運算子為 a 遞增 1，而 b 遞減 1 (一樣用,隔開):</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">int a,b;
+for( a = 1, b=50 ; a&lt;=100 ; a++, b--){
+   //your code
+}
+</code></pre></div>
+<hr>
+
+<h3 id="toc_7">for 迴圈可以巢狀</h3>
+
+<p>所謂巢狀就是一個 for 迴圈裡面還可以在包另一個 for 迴圈。</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">for( 運算初始式; 條件式; 更新運算式 ){
+ //your code
+ for( 運算初始式; 條件式; 更新運算式 ){
+   //your code       
+ }
+}
+</code></pre></div>
+<h2 id="toc_8">(2) while 敘述</h2>
+
+<p>while 的敘述為:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">while (條件式){
+ 程式碼;
+}
+</code></pre></div>
+<p>比起 for 的敘述， while 可能相對單純一點。while 的敘述若以中文的說法，就是當條件成立，就執行裡面的程式碼，比方說當 a &lt;=5 時，印出 a 的值:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">int a = 1;
+while(a&lt;=5){
+   NSLog(@&quot;a&#39;s value: %i&quot;, a);
+   a++;
+}
+</code></pre></div>
+<p>執行結果:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">a&#39;s value: 1
+a&#39;s value: 2
+a&#39;s value: 3
+a&#39;s value: 4
+a&#39;s value: 5
+</code></pre></div>
+<p>需要注意的是一定要在 while 的程式碼加上 a++; 讓 a 每次遞增 1，這樣第五次進到 while 程式時，a 就會等於 6，於是才會停止繼續執行 while 的程式碼了，若少加了這行，則會變成無窮迴圈，因為 a 的值沒有改變，永遠等於 1，而且也永遠符合 while 的條件式  (a&lt;=5)，使用 while 的話一定要注意這一點，別讓它成為無窮迴圈。</p>
+
+<h2 id="toc_9">(3) do...while 敘述</h2>
+
+<p>do...while 的敘述如下:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">do {
+  程式碼
+} while (條件式);
+</code></pre></div>
+<p>do...while 敘述跟 while 很類似，其實就是把順序倒過來而已，使用 while 的時候，會先判斷是不是符合條件式在執行程式碼，而 do...while 是先執行程式碼，在判斷 while 裡面的條件式是不是成立。</p>
+
+<p>我們用 do...while 做一個 1 累加到 10 的結果:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">int a = 1;
+int total = 0;        
+do{
+   total += a++;
+  }while (a&lt;=10);
+NSLog(@&quot;1+2+3...+10 =  %i&quot;, total);
+</code></pre></div>
+<p>執行結果:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">1+2+3...+10 =  55
+</code></pre></div>
+<h2 id="toc_10">(4) break 敘述</h2>
+
+<p>break 用在當某個條件成立時，離開迴圈的執行。以下範例是 a=1， a&lt;=10，a 每次遞增 1，但是 for 迴圈裡面多一個條件判斷 (if 敘述在下章介紹)，我們利用 if 條件式，判斷當 a 等於 5 時，就使用 break 離開迴圈。</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">int a = 1;
+int total = 0;
+for( a = 1 ; a &lt;= 10 ; a++){
+   total +=a;
+   NSLog(@&quot;a is %i&quot;, a);
+   NSLog(@&quot;total is %i&quot;, total);
+   //當 a 等於 5 時，即中斷 for 迴圈
+   if(a==5){
+      break;
+   }
+}
+</code></pre></div>
+<p>執行結果: </p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">2013-12-30 ~[20695:303] a is 1
+2013-12-30 ~[20695:303] total is 1
+2013-12-30 ~[20695:303] a is 2
+2013-12-30 ~[20695:303] total is 3
+2013-12-30 ~[20695:303] a is 3
+2013-12-30 ~[20695:303] total is 6
+2013-12-30 ~[20695:303] a is 4
+2013-12-30 ~[20695:303] total is 10
+2013-12-30 ~[20695:303] a is 5
+2013-12-30 ~[20695:303] total is 15
+</code></pre></div>
+<p>當 a 等於 5 時，就沒有在執行 for 裡面的程式了，因為已經被 break 了。
+下個章節會在詳加介紹 break 敘述。</p>
+
+<h2 id="toc_11">(5) continue 敘述</h2>
+
+<p>continue 的作用是立即跳出，不會再執行下面的程式碼，回到迴圈開頭重新執行。</p>
+
+<p>下方的範例，a每次遞增 1，而條件是 a &lt;= 5 時才會執行，我們利用 continue 的特性跟 if 敘述，故意跳開當 a=2 以及 a=4 時不要往下執行 NSLog 函式。最後只會印出 1, 3, 5 這三種 a 的值。 </p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">int a = 1;
+
+for( a = 1 ; a &lt;= 5 ; a++){
+  if(a==2 || a==4){
+    continue;
+  }
+  NSLog(@&quot;a is %i&quot;, a);
+}
+</code></pre></div>
+<p>執行結果:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">2013-12-30 ~[20736:303] a is 1
+2013-12-30 ~[20736:303] a is 3
+2013-12-30 ~[20736:303] a is 5
+</code></pre></div>
+<hr>
+
+<h4 id="toc_12">下一章節，將會介紹 Objective-C 流程控制 。</h4>
+
+<hr>
+
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="創用 CC 授權條款" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本著作由<span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">WinWu</span>製作，以<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">創用CC 姓名標示-非商業性-相同方式分享 4.0 國際 授權條款</a>釋出。</p>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+  
+   
+  <li class="next"><a href="/2013/12/25/ch01.html">Newer &rarr;</a></li>
+  
+
+</ul>
+
+  <!--div id="disqus_thread">
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = ''; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </ul>
+    </div-->
+  	<footer>
+       <p class="text-muted credit">&copy; 2014 Obj-C 學習 &middot; <a href="https://github.com/arnp/herring-cove"> Herring Cove for Jekyll </a>Sun Jan 19 13:43:04 +0800 2014  </p>
+  		 </footer>
+ <!-- Bootstrap core JavaScript-->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/hc.js"></script>
+</body>
+
+</html>
