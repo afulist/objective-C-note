@@ -142,13 +142,13 @@
 <li>TypeNname 是資料的型別，identifier 所指的是變數的名稱:
 但是如果只有指定變數而沒有值，會看到 Xcode 的 Warning 訊息 『Unused Variable &#39;變數名稱&#39;』</li>
 </ul>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">TypeNname identifier;
+<div class="highlight"><pre><code class="objective-c language-objective-c" data-lang="objective-c"><span class="n">TypeNname</span> <span class="n">identifier</span><span class="p">;</span>
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">int aaa;
 // aaa 沒有給定初始值，
 // 因此會接收到 Xcode 的 Unused Variable &#39;aaa&#39;
 </code></pre></div></li>
 <li><p>在定義一個變數的時候，_給定初始值_：</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">TypeNname identifier =  default;
+<div class="highlight"><pre><code class="objective-c language-objective-c" data-lang="objective-c"><span class="n">TypeNname</span> <span class="n">identifier</span> <span class="o">=</span>  <span class="k">default</span><span class="p">;</span>
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">//定義一個 weight 變數，型別為 int，且初始值為 50;
 int weight = 50;
 </code></pre></div></li>
@@ -250,7 +250,7 @@ NSLog(@&quot;value1 is %g&quot;, value1);
 
 <p>如果你沒有宣告是 float 或是 double 形態，預設以 double 型態儲存。</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">float  floattest = 0.222;
-double test = 1e1;      
+double test = 1e1;
 NSLog(@&quot;floattest value is %f&quot;, floattest);
 NSLog(@&quot;double value is %g&quot;, test);
 </code></pre></div>
@@ -276,7 +276,7 @@ NSLog(@&quot;double value is %g&quot;, test);
 
 <p>比方說 int 形態的修飾詞有 long, unsigned, long long, unsigned long long... 等等，假如你非常確定某個變數值只會儲存正整數，那麼你可以把 <code>int value1;</code> 的 int 型別加上修飾詞 unsigned (unsigned 只能儲存正數)，因此可以改用 <code>unsigned int value1;</code> 的方式宣告變數，不但能更精確的儲存該變數值，也能有效運用記憶體空間。</p>
 
-<p>以下是有加入修飾詞的形態以及期 NSLog 的表達方式: 
+<p>以下是有加入修飾詞的形態以及期 NSLog 的表達方式:
 (僅是部分舉例，這個部分若要精確知道所有修飾詞與形態的組合，建議自行上網搜尋)</p>
 
 <table><thead>
@@ -362,7 +362,7 @@ NSLog(@&quot;double value is %g&quot;, test);
     </ul>
     </div-->
   	<footer>
-       <p class="text-muted credit">&copy; 2014 Obj-C 學習 &middot; <a href="https://github.com/arnp/herring-cove"> Herring Cove for Jekyll </a>Tue Jan 21 00:33:40 +0800 2014  </p>
+       <p class="text-muted credit">&copy; 2014 Obj-C 學習 &middot; <a href="https://github.com/arnp/herring-cove"> Herring Cove for Jekyll </a>Thu Feb 06 16:13:31 +0800 2014  </p>
   		 </footer>
  <!-- Bootstrap core JavaScript-->
     <script src="http://winwu.github.io/objective-C-note/js/jquery-1.10.2.min.js"></script>
